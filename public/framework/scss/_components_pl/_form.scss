@@ -65,7 +65,7 @@ $select-symbol-offset:  sum($form-select-symbol-font-size, $select-symbol-right,
 
     &._focus,
     &._blur,
-    &._change {
+    &._changed {
 
       label {
         transition: all .2s;
