@@ -1,0 +1,38 @@
+<?php return [
+    'palettes' => [
+        'default'  =>
+            '{placeholder_label_legend:hide},pl-input-top-offset,pl-textarea-top-offset,pl-label-filled-top-offset,pl-label-filled-font-size;'
+    ],
+    'fields'   => [
+        // Placeholder label
+        'pl-input-top-offset' => [
+            'default'                 => 'a:2:{s:4:"unit";s:3:"rem";s:5:"value";s:5:"0.375";}',
+            'label'                   => &$GLOBALS['TL_LANG']['tl_thememanager']['pl-input-top-offset'],
+            'inputType'               => 'inputUnit',
+            'options'                 => $GLOBALS['CTM_CSS_UNITS'],
+            'eval'                    => ['placeholder'=>'.375rem', 'includeBlankOption'=>true, 'rgxp'=>'digit_inherit', 'maxlength'=>32, 'tl_class'=>'w25 clr'],
+        ],
+        'pl-textarea-top-offset' => [
+            'default'                 => 'a:2:{s:4:"unit";s:3:"rem";s:5:"value";s:5:"0.375";}',
+            'label'                   => &$GLOBALS['TL_LANG']['tl_thememanager']['pl-textarea-top-offset'],
+            'inputType'               => 'inputUnit',
+            'options'                 => $GLOBALS['CTM_CSS_UNITS'],
+            'eval'                    => ['placeholder'=>'.375rem', 'includeBlankOption'=>true, 'rgxp'=>'digit_inherit', 'maxlength'=>32, 'tl_class'=>'w25'],
+        ],
+
+        'pl-label-filled-top-offset' => [
+            'default'                 => 'a:2:{s:4:"unit";s:3:"rem";s:5:"value";s:6:"0.5625";}',
+            'label'                   => &$GLOBALS['TL_LANG']['tl_thememanager']['pl-label-filled-top-offset'],
+            'inputType'               => 'inputUnit',
+            'options'                 => $GLOBALS['CTM_CSS_UNITS'],
+            'eval'                    => ['placeholder'=>'.5625rem', 'includeBlankOption'=>true, 'rgxp'=>'digit_inherit', 'maxlength'=>32, 'tl_class'=>'w25'],
+        ],
+        'pl-label-filled-font-size' => [
+            'default'                 => 'a:2:{s:4:"unit";s:3:"rem";s:5:"value";s:3:"0.7";}',
+            'label'                   => &$GLOBALS['TL_LANG']['tl_thememanager']['pl-label-filled-font-size'],
+            'inputType'               => 'inputUnit',
+            'options'                 => $GLOBALS['CTM_CSS_UNITS'],
+            'eval'                    => ['placeholder'=>'.7rem', 'includeBlankOption'=>true, 'rgxp'=>'digit_inherit', 'maxlength'=>32, 'tl_class'=>'w25'],
+        ]
+    ]
+];

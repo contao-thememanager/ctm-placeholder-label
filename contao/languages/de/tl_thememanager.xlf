@@ -1,0 +1,44 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="contao/languages/en/tl_thememanager.php" source-language="en" target-language="de">
+    <body>
+      <trans-unit id="tl_thememanager.placeholder_label_legend">
+        <source>Placeholder-Label</source>
+        <target>Placeholder-Label</target>
+      </trans-unit>
+
+      <trans-unit id="tl_thememanager.pl-input-top-offset.0">
+        <source>$pl-input-top-offset</source>
+        <target>$pl-input-top-offset</target>
+      </trans-unit>
+      <trans-unit id="tl_thememanager.pl-input-top-offset.1">
+        <source>Here you can set the top offset of the input for form input fields.</source>
+        <target>Hier können Sie den oberen Versatz der Eingabe für Formular-Eingabefelder einstellen.</target>
+      </trans-unit>
+      <trans-unit id="tl_thememanager.pl-textarea-top-offset.0">
+        <source>$pl-textarea-top-offset</source>
+        <target>$pl-textarea-top-offset</target>
+      </trans-unit>
+      <trans-unit id="tl_thememanager.pl-textarea-top-offset.1">
+        <source>Here you can set the top offset of the input for textarea - elements.</source>
+        <target>Hier können Sie den oberen Versatz der Eingabe für Textarea - Elemente einstellen.</target>
+      </trans-unit>
+
+      <trans-unit id="tl_thememanager.pl-label-filled-top-offset.0">
+        <source>$pl-label-filled-top-offset</source>
+        <target>$pl-label-filled-top-offset</target>
+      </trans-unit>
+      <trans-unit id="tl_thememanager.pl-label-filled-top-offset.1">
+        <source>Here you can set the top offset of the label if the form field has been filled.</source>
+        <target>Hier können Sie den oberen Versatz des Labels einstellen, wenn das Feld Formularfeld befüllt wurde.</target>
+      </trans-unit>
+      <trans-unit id="tl_thememanager.pl-label-filled-font-size.0">
+        <source>$pl-label-filled-font-size</source>
+        <target>$pl-label-filled-font-size</target>
+      </trans-unit>
+      <trans-unit id="tl_thememanager.pl-label-filled-font-size.1">
+        <source>Here you can set the font size of the label if the form field has been filled.</source>
+        <target>Hier können Sie die Schriftgröße des Labels einstellen, wenn das Feld Formularfeld befüllt wurde.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

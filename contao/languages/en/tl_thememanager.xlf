@@ -1,0 +1,35 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="contao/languages/en/tl_thememanager.php" source-language="en">
+    <body>
+      <trans-unit id="tl_thememanager.placeholder_label_legend">
+        <source>Placeholder-Label</source>
+      </trans-unit>
+
+      <trans-unit id="tl_thememanager.pl-input-top-offset.0">
+        <source>$pl-input-top-offset</source>
+      </trans-unit>
+      <trans-unit id="tl_thememanager.pl-input-top-offset.1">
+        <source>Here you can set the top offset of the input for form input fields.</source>
+      </trans-unit>
+      <trans-unit id="tl_thememanager.pl-textarea-top-offset.0">
+        <source>$pl-textarea-top-offset</source>
+      </trans-unit>
+      <trans-unit id="tl_thememanager.pl-textarea-top-offset.1">
+        <source>Here you can set the top offset of the input for textarea - elements.</source>
+      </trans-unit>
+
+      <trans-unit id="tl_thememanager.pl-label-filled-top-offset.0">
+        <source>$pl-label-filled-top-offset</source>
+      </trans-unit>
+      <trans-unit id="tl_thememanager.pl-label-filled-top-offset.1">
+        <source>Here you can set the top offset of the label if the form field has been filled.</source>
+      </trans-unit>
+      <trans-unit id="tl_thememanager.pl-label-filled-font-size.0">
+        <source>$pl-label-filled-font-size</source>
+      </trans-unit>
+      <trans-unit id="tl_thememanager.pl-label-filled-font-size.1">
+        <source>Here you can set the font size of the label if the form field has been filled.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

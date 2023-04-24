@@ -1,0 +1,89 @@
+$form-pt: nth(standardize($form-input-padding), 1);
+$form-pr: nth(standardize($form-input-padding), 2);
+$form-pb: nth(standardize($form-input-padding), 3);
+$form-pl: nth(standardize($form-input-padding), 4);
+$select-symbol-right:   rem(12);
+$select-symbol-offset:  sum($form-select-symbol-font-size, $select-symbol-right, 'px');
+
+.pl-init {
+
+  .pl-parent {
+    text-align: left;
+    position: relative;
+
+    label,
+    legend {
+
+      .mandatory {
+        display: none;
+      }
+    }
+
+    > label {
+      position: absolute;
+      --col-wdth:#{calc(100% - #{sum($grid-gutter-small-width, $form-pr)})};
+      --col-ml:#{sum($form-pl, 1px)};
+      max-width: #{calc(100% - #{sum($grid-gutter-small-width, $form-pr)})};
+      margin-left: #{$form-pl};
+      margin-top: sum(divide(sub($form-input-height, $form-label-font-size * $line-height-base), 2), 1px);
+      z-index: 1;
+
+      pointer-events: none;
+
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+      &.fi:not(.fi-right) {
+        padding-left: rem(36);
+      }
+    }
+
+    select,
+    input,
+    textarea {
+      padding: sum($form-pt, $pl-input-top-offset) $form-pr sub($form-pb, $pl-input-top-offset) $form-pl;
+      text-overflow: ellipsis;
+    }
+
+    select {
+      padding-right: maxUnit($form-pr, $select-symbol-offset);
+    }
+
+    textarea {
+      padding-top: sum($form-pt, $pl-textarea-top-offset);
+    }
+
+    &.select {
+
+      > label {
+        --col-wdth:#{calc(100% - #{sum(sum($grid-gutter-small-width, $form-pl), maxUnit($form-pr, $select-symbol-offset))})};
+        max-width: #{calc(100% - #{sum(sum($grid-gutter-small-width, $form-pl), maxUnit($form-pr, $select-symbol-offset))})};
+        text-overflow: ellipsis;
+      }
+    }
+
+    &._focus,
+    &._blur,
+    &._change {
+
+      label {
+        transition: all .2s;
+      }
+    }
+
+    &._focus,
+    &._filled {
+
+      > label {
+        --col-wdth:#{calc(100% - #{sum($grid-gutter-small-width, $form-pl) + rem(2)})};
+        --col-ml:#{sum($form-pl, 1px)};
+        max-width: #{calc(100% - #{sum($grid-gutter-small-width, $form-pl) + rem(2)})};
+        margin-left: #{sum($form-pl, 1px)};
+        margin-top: $pl-label-filled-top-offset;
+        line-height: 1;
+        font-size: $pl-label-filled-font-size;
+      }
+    }
+  }
+}
