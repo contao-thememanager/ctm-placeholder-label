@@ -1,0 +1,9 @@
+{
+  "entrypoints": {
+    "placeholderlabel": {
+      "js": [
+        "/public/assets/dist/placeholderlabel.js"
+      ]
+    }
+  }
+}
