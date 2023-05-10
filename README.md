@@ -14,6 +14,8 @@ Make sure to follow following order of css files in your layout
 3. _placeholderlabel.css
 
 ## Settings
+
+### ThemeManager
 <table>
   <tr>
     <th colspan="2"><strong>Placeholder Label</strong></th>
@@ -39,3 +41,35 @@ Make sure to follow following order of css files in your layout
     <td>Font size of the label if the form field has been filled</td>
   </tr>
 </table>
+
+### JavaScript
+By modifying the file js_ctm_placeholderlabel, you can modify and override the placeholder label init.
+
+#### Options
+```javascript
+{
+    selector: 'form',         // Parse selector
+    autofill: true,           // Consider autofilled fields as well
+    inputs: {
+        parent: 'div.widget', // Parent input selector
+        label:  'label',      // Label
+        include: [            // Included input types
+            'input',
+            'select',
+            'textarea'
+        ], 
+        exclude: [            // Excluded input types  
+            '[type="checkbox"]',
+            '[type="radio"]',
+            '[type="range"]',
+            '[type="hidden"]',
+            '[type="submit"]',
+            '[type="file"]',
+            '[class="rsas-field"]']
+    },
+    onFocus:  () => {},       // Callback on focus
+    onBlur:   () => {},       // Callback on blur
+    onChange: () => {},       // Callback onChange
+    onInit:   () => {}        // Callback onInit
+}
+```

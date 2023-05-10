@@ -7,9 +7,8 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 Encore
     .setOutputPath('./public/assets/dist/')
     .setPublicPath('/public/assets/dist/')
-    .addEntry('placeholderlabel', './public/assets/plabel/placeholderlabel.js')
+    .addEntry('placeholderlabel', './assets/js/placeholderlabel.js')
     .disableSingleRuntimeChunk()
-
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
 ;
