@@ -1,6 +1,6 @@
 {
   "name": "contao-thememanager/ctm-placeholder-label",
-  "type": "contao-bundle",
+  "type": "symfony-bundle",
   "description": "Placeholder label integration for Contao Theme-Manager",
   "keywords": ["contao","theme","form","label","placeholder"],
   "homepage": "https://www.oveleon.de/thememanager.html",
