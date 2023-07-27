@@ -93,22 +93,26 @@ class PlaceholderLabel {
 
     _r(f, i)
     {
-        let c = new Event('change');
-
-        i.addEventListener('onautocomplete', (e) => {e.currentTarget.dispatchEvent(c)}, false)
-        i.addEventListener('focus',  (e) => { this._e(e) }, false)
-        i.addEventListener('blur',   (e) => { this._e(e) }, false)
-        i.addEventListener('change', (e) => { this._e(e) }, false)
-
         let p = i.closest(this.o.inputs.parent)
-        p.classList.add(this.c.p)
 
-        i.phl = {
-            l: p.querySelector(this.o.inputs.label),
-            p: p
+        if (p)
+        {
+            let c = new Event('change');
+
+            i.addEventListener('onautocomplete', (e) => {e.currentTarget.dispatchEvent(c)}, false)
+            i.addEventListener('focus',  (e) => { this._e(e) }, false)
+            i.addEventListener('blur',   (e) => { this._e(e) }, false)
+            i.addEventListener('change', (e) => { this._e(e) }, false)
+
+            p.classList.add(this.c.p)
+
+            i.phl = {
+                l: p.querySelector(this.o.inputs.label),
+                p: p
+            }
+
+            f.phl.p.push(i)
         }
-
-        f.phl.p.push(i)
     }
 
     _e(e)
@@ -146,25 +150,29 @@ class PlaceholderLabel {
 
     _u(i, a)
     {
-        let p = i.phl.p
-        let t = i.nodeName.toLowerCase()
+        let p = i.phl?.p
 
-        let f = t === 'select' && i.value.length === 0 && i.options[i.selectedIndex].innerHTML.replace(/&nbsp;/g,' ').trim()
-        let e = t === 'select' && i.options[i.selectedIndex].innerHTML === '&nbsp;'
-
-        if ((i.value.length === 0 && !i.matches(':-webkit-autofill') && !f && i.placeholder === '') || e)
-            p.classList.remove(this.c.l)
-        else
-            p.classList.add(this.c.l)
-
-        if(!!a && this.o.autofill)
+        if (p)
         {
-            let n = 0
-            let m = setInterval(() => {
-                this._u(i)
+            let t = i.nodeName.toLowerCase()
 
-                if(n++ === 5) clearInterval(m)
-            },50)
+            let f = t === 'select' && i.value.length === 0 && i.options[i.selectedIndex].innerHTML.replace(/&nbsp;/g,' ').trim()
+            let e = t === 'select' && i.options[i.selectedIndex].innerHTML === '&nbsp;'
+
+            if ((i.value.length === 0 && !i.matches(':-webkit-autofill') && !f && i.placeholder === '') || e)
+                p.classList.remove(this.c.l)
+            else
+                p.classList.add(this.c.l)
+
+            if(!!a && this.o.autofill)
+            {
+                let n = 0
+                let m = setInterval(() => {
+                    this._u(i)
+
+                    if(n++ === 5) clearInterval(m)
+                },50)
+            }
         }
     }
 
