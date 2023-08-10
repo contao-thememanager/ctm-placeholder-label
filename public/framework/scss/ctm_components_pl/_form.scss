@@ -32,7 +32,9 @@ $select-symbol-offset:  sum($form-select-symbol-font-size, $select-symbol-right,
 
       white-space: nowrap;
       text-overflow: ellipsis;
-      overflow: hidden;
+      overflow-x: hidden;
+
+      height: 100%;
 
       &.fi:not(.fi-right) {
         padding-left: rem(36);
