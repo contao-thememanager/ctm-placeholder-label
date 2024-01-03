@@ -21,9 +21,9 @@ $select-symbol-offset:  sum($form-select-symbol-font-size, $select-symbol-right,
 
     > label {
       position: absolute;
-      --col-wdth:#{calc(100% - #{sum($grid-gutter-small-width, $form-pr)})};
+      --col-wdth:#{calc(100% - #{sum(divide($grid-gutter-width, 2), $form-pr)})};
       --col-ml:#{sum($form-pl, 1px)};
-      max-width: #{calc(100% - #{sum($grid-gutter-small-width, $form-pr)})};
+      max-width: #{calc(100% - #{sum(divide($grid-gutter-width, 2), $form-pr)})};
       margin-left: #{$form-pl};
       margin-top: sum(divide(sub($form-input-height, $form-label-font-size * $line-height-base), 2), 1px);
       z-index: 1;
@@ -59,8 +59,8 @@ $select-symbol-offset:  sum($form-select-symbol-font-size, $select-symbol-right,
     &.select {
 
       > label {
-        --col-wdth:#{calc(100% - #{sum(sum($grid-gutter-small-width, $form-pl), maxUnit($form-pr, $select-symbol-offset))})};
-        max-width: #{calc(100% - #{sum(sum($grid-gutter-small-width, $form-pl), maxUnit($form-pr, $select-symbol-offset))})};
+        --col-wdth:#{calc(100% - #{sum(sum(divide($grid-gutter-width, 2), $form-pl), maxUnit($form-pr, $select-symbol-offset))})};
+        max-width: #{calc(100% - #{sum(sum(divide($grid-gutter-width, 2), $form-pl), maxUnit($form-pr, $select-symbol-offset))})};
         text-overflow: ellipsis;
       }
     }
@@ -78,9 +78,9 @@ $select-symbol-offset:  sum($form-select-symbol-font-size, $select-symbol-right,
     &._filled {
 
       > label {
-        --col-wdth:#{calc(100% - #{sum($grid-gutter-small-width, $form-pl) + rem(2)})};
+        --col-wdth:#{calc(100% - #{sum(divide($grid-gutter-width, 2), $form-pl) + rem(2)})};
         --col-ml:#{sum($form-pl, 1px)};
-        max-width: #{calc(100% - #{sum($grid-gutter-small-width, $form-pl) + rem(2)})};
+        max-width: #{calc(100% - #{sum(divide($grid-gutter-width, 2), $form-pl) + rem(2)})};
         margin-left: #{sum($form-pl, 1px)};
         margin-top: $pl-label-filled-top-offset;
         line-height: 1;
