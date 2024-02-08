@@ -1,9 +1,17 @@
 <?xml version="1.0" ?><xliff version="1.1">
   <file datatype="php" original="contao/languages/en/tl_thememanager.php" source-language="en" target-language="de">
     <body>
-      <trans-unit id="tl_thememanager.placeholder_label_legend">
-        <source>Placeholder-Label</source>
-        <target>Placeholder-Label</target>
+      <trans-unit id="tl_thememanager.placeholder_label_header">
+        <source>Extension: Placeholder-Label</source>
+        <target>Erweiterung: Placeholder-Label</target>
+      </trans-unit>
+      <trans-unit id="tl_thememanager.placeholder_label_offset_legend">
+        <source>Offset</source>
+        <target>Abstand</target>
+      </trans-unit>
+      <trans-unit id="tl_thememanager.placeholder_label_typography_legend">
+        <source>Typography</source>
+        <target>Typografie</target>
       </trans-unit>
 
       <trans-unit id="tl_thememanager.pl-input-top-offset.0">
