@@ -156,8 +156,8 @@ class PlaceholderLabel {
         {
             let t = i.nodeName.toLowerCase()
 
-            let f = t === 'select' && i.value.length === 0 && i.options[i.selectedIndex].innerHTML.replace(/&nbsp;/g,' ').trim()
-            let e = t === 'select' && i.options[i.selectedIndex].innerHTML === '&nbsp;'
+            let f = t === 'select' && i.value.length === 0 && i.options[i.selectedIndex]?.innerHTML.replace(/&nbsp;/g,' ').trim()
+            let e = t === 'select' && i.options[i.selectedIndex]?.innerHTML === '&nbsp;'
 
             if ((i.value.length === 0 && !i.matches(':-webkit-autofill') && !f && i.placeholder === '') || e)
                 p.classList.remove(this.c.l)
