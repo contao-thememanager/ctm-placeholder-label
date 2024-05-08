@@ -11,15 +11,14 @@ $select-symbol-offset:  sum($form-select-symbol-font-size, $select-symbol-right,
     text-align: left;
     position: relative;
 
-    label,
-    legend {
+    display: flex;
+    flex-flow: column;
 
-      .mandatory {
-        display: none;
-      }
+    > *:not(label) {
+      order: 1;
     }
 
-    > label {
+    label {
       position: absolute;
       --col-wdth:#{calc(100% - #{sum(divide($grid-gutter-width, 2), $form-pr)})};
       --col-ml:#{sum($form-pl, 1px)};
@@ -36,14 +35,18 @@ $select-symbol-offset:  sum($form-select-symbol-font-size, $select-symbol-right,
 
       height: 100%;
 
+      transition: all .2s;
+
       &.fi:not(.fi-right) {
         padding-left: rem(36);
       }
+
+      .mandatory {
+        display: none;
+      }
     }
 
-    select,
-    input,
-    textarea {
+    :is(select, input, textarea) {
       padding: sum($form-pt, $pl-input-top-offset) $form-pr sub($form-pb, $pl-input-top-offset) $form-pl;
       text-overflow: ellipsis;
     }
@@ -65,27 +68,14 @@ $select-symbol-offset:  sum($form-select-symbol-font-size, $select-symbol-right,
       }
     }
 
-    &._focus,
-    &._blur,
-    &._changed {
-
-      label {
-        transition: all .2s;
-      }
-    }
-
-    &._focus,
-    &._filled {
-
-      > label {
-        --col-wdth:#{calc(100% - #{sum(divide($grid-gutter-width, 2), $form-pl) + rem(2)})};
-        --col-ml:#{sum($form-pl, 1px)};
-        max-width: #{calc(100% - #{sum(divide($grid-gutter-width, 2), $form-pl) + rem(2)})};
-        margin-left: #{sum($form-pl, 1px)};
-        margin-top: $pl-label-filled-top-offset;
-        line-height: 1;
-        font-size: $pl-label-filled-font-size;
-      }
+    :is(:focus-within,:has([placeholder]:not([placeholder=" "]:placeholder-shown),option:checked:not([value=""]):not([value="-"]))) ~ label {
+      --col-wdth:#{calc(100% - #{sum(divide($grid-gutter-width, 2), $form-pl) + rem(2)})};
+      --col-ml:#{sum($form-pl, 1px)};
+      max-width: #{calc(100% - #{sum(divide($grid-gutter-width, 2), $form-pl) + rem(2)})};
+      margin-left: #{sum($form-pl, 1px)};
+      margin-top: $pl-label-filled-top-offset;
+      line-height: 1;
+      font-size: $pl-label-filled-font-size;
     }
   }
 }
