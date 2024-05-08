@@ -1,0 +1,21 @@
+<?php
+  if ($labelBelow = (bool) preg_match('[widget-text|widget-select|widget-textarea]', $this->prefix)) {
+      $this->prefix .= ' pl-parent';
+  }
+?>
+
+<div class="<?= $this->prefix ?><?php if ($this->class): ?> <?= $this->class ?><?php endif; ?>">
+  <?php if ($labelBelow): ?>
+    <?php $this->block('field'); ?>
+    <?php $this->endblock(); ?>
+
+    <?php $this->block('label'); ?>
+    <?php $this->endblock(); ?>
+  <?php else: ?>
+    <?php $this->block('label'); ?>
+    <?php $this->endblock(); ?>
+
+    <?php $this->block('field'); ?>
+    <?php $this->endblock(); ?>
+  <?php endif; ?>
+</div>
