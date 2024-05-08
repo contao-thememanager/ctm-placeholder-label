@@ -49,27 +49,11 @@ By modifying the file js_ctm_placeholderlabel, you can modify and override the p
 ```javascript
 {
     selector: 'form',         // Parse selector
-    autofill: true,           // Consider autofilled fields as well
-    inputs: {
-        parent: 'div.widget', // Parent input selector
-        label:  'label',      // Label
-        include: [            // Included input types
-            'input',
-            'select',
-            'textarea'
-        ], 
-        exclude: [            // Excluded input types  
-            '[type="checkbox"]',
-            '[type="radio"]',
-            '[type="range"]',
-            '[type="hidden"]',
-            '[type="submit"]',
-            '[type="file"]',
-            '[class="rsas-field"]']
-    },
-    onFocus:  () => {},       // Callback on focus
-    onBlur:   () => {},       // Callback on blur
-    onChange: () => {},       // Callback onChange
-    onInit:   () => {}        // Callback onInit
+    excludeClass: 'pl-none',  // Using this class on a <form> will disable plabel
+    include: [                // Considered fields
+      '.pl-parent input',
+      '.pl-parent select',
+      '.pl-parent textarea'
+    ]
 }
 ```
