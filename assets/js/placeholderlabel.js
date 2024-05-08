@@ -20,8 +20,6 @@ class PlaceholderLabel {
             if (f.classList.contains(this.o.excludeClass))
                 return
 
-            f.classList.add('pl-init')
-
             f.querySelectorAll(Object.values(this.o.include).join(',')).forEach((i) => {
                 if (!i.placeholder)
                     i.placeholder = " ";

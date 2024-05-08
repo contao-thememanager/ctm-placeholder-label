@@ -5,7 +5,7 @@ $form-pl: nth(standardize($form-input-padding), 4);
 $select-symbol-right:   rem(12);
 $select-symbol-offset:  sum($form-select-symbol-font-size, $select-symbol-right, 'px');
 
-.pl-init {
+form:not(.pl-none) {
 
   .pl-parent {
     text-align: left;
