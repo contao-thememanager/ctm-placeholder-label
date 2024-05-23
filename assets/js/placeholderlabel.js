@@ -5,6 +5,14 @@ class PlaceholderLabel {
         return[...new Set([...Object.keys(a),...Object.keys(b)])].reduce((c,k)=>({...c,[k]:"object"===typeof(a[k])?Object.assign({},a[k],b[k]):!b[k]?a[k]:b[k]}),{})
     }
 
+    _init(i)
+    {
+        i.forEach((i) => {
+            if (!i.placeholder)
+                i.placeholder = " ";
+        })
+    }
+
     constructor(o) {
         this.o = this._m({
             selector: 'form',
@@ -20,10 +28,16 @@ class PlaceholderLabel {
             if (f.classList.contains(this.o.excludeClass))
                 return
 
-            f.querySelectorAll(Object.values(this.o.include).join(',')).forEach((i) => {
-                if (!i.placeholder)
-                    i.placeholder = " ";
-            })
+            const i = Object.values(this.o.include).join(',');
+
+            this._init(f.querySelectorAll(i));
+
+            new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    const e = mutation.target.matches(i) ? mutation.target : mutation.target.querySelectorAll(i);
+                    this._init(e)
+                });
+            }).observe(document, { attributes: false, childList: true, subtree: true });
         })
     }
 }
