@@ -1,5 +1,5 @@
 <?php
-  if ($labelBelow = (bool) preg_match('[widget-text|widget-select|widget-textarea]', $this->prefix)) {
+  if ($labelBelow = (bool) preg_match('[widget-text|widget-select|widget-password|widget-textarea]', $this->prefix)) {
       $this->prefix .= ' pl-parent';
   }
 ?>
