@@ -10,6 +10,9 @@ class PlaceholderLabel {
         i.forEach((i) => {
             if (!i.placeholder)
                 i.placeholder = " ";
+
+            if (!i.value && i.selectedIndex > -1 && i.options[i.selectedIndex].innerText.trim().length > 0)
+                i.classList.add('pl-fill')
         })
     }
 

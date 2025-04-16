@@ -68,7 +68,7 @@ form:not(.pl-none) {
       }
     }
 
-    :is(:focus-within,:has([placeholder]:not([placeholder=" "]:placeholder-shown),option:checked:not([value=""]):not([value="-"]))) ~ label {
+    :is(:focus-within,:has([placeholder]:not([placeholder=" "]:placeholder-shown),option:checked:not([value=""]):not([value="-"]),.pl-fill)) ~ label {
       --col-wdth:#{calc(100% - #{sum(divide($grid-gutter-width, 2), $form-pl) + rem(2)})};
       --col-ml:#{sum($form-pl, 1px)};
       max-width: #{calc(100% - #{sum(divide($grid-gutter-width, 2), $form-pl) + rem(2)})};
